@@ -25,7 +25,7 @@ class Login extends Component {
         const user = this.props.users.filter(user => user.user.pin === this.state.pin)[0];
         if(typeof user !== 'undefined'){
             alert("You have successfully logged in");
-            this.props.login(user);
+            this.props.login(user.user);
         }else {
             alert("pin does not exist");
         }
@@ -47,6 +47,7 @@ class Login extends Component {
                 <Link to="/">
                     Go Back
                 </Link>
+                <br />
                 <Link to="/transactions">Transactions</Link>
             </div>
         )
