@@ -26,6 +26,7 @@ class Login extends Component {
         if(typeof user !== 'undefined'){
             alert("You have successfully logged in");
             this.props.login(user.user);
+            this.props.history.push('/transactions');
         }else {
             alert("pin does not exist");
         }
@@ -47,8 +48,6 @@ class Login extends Component {
                 <Link to="/">
                     Go Back
                 </Link>
-                <br />
-                <Link to="/transactions">Transactions</Link>
             </div>
         )
     }

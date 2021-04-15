@@ -1,17 +1,22 @@
-import { LOGIN, SIGNUP, UPDATE_USER } from '../actions/types';
+import { LOGIN, LOGOUT, SIGNUP, UPDATE_USER } from '../actions/types';
 
 const initialState = {
     users: [],
-    user: {user: {pin: ""}}
+    user: {}
 }
 
 export default function(state = initialState, action) {
     switch(action.type) {
         case LOGIN:
-             return {
-                 ...state,
-                 user: action.payload
-             };
+            return {
+                ...state,
+                user: action.payload
+            };
+        case LOGOUT:
+            return {
+                ...state,
+                user: action.payload
+            }
         case SIGNUP:
             return {
                 ...state,

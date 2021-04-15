@@ -43,9 +43,9 @@ class NewAccount extends Component {
                 amount: this.state.deposit,
                 transactions: []
             }
-    
             this.props.signup(user);
-            alert("you have successfully created a new account. Click go back to return to home page or go to transactions");
+            alert("You have successfully created a new account");
+            this.props.history.push('/transactions');
         }
     }
 
@@ -77,8 +77,6 @@ class NewAccount extends Component {
                     <Link to="/">
                         Go Back
                     </Link>
-                    <br />
-                    <Link to="/transactions">Transactions</Link>
                 </form>
             </div>
         )

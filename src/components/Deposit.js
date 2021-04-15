@@ -27,6 +27,7 @@ class Deposit extends Component {
         user.transactions.push(`Deposited $${this.state.deposit} into account`);
         alert(`Your account now has $${user.amount}`)
         this.props.updateUser(user);
+        this.props.history.push('/transactions');
     }
 
     render(){

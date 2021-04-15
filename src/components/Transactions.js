@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { logout } from '../actions/userActions';
 
 class Transactions extends Component {
     render(){
@@ -28,6 +29,10 @@ class Transactions extends Component {
                     Deposit Amount
                 </Link>
                 <br />
+                <Link to="/">
+                <button type="submit" onClick={this.props.logout}>Log Out</button>
+                </Link>
+                <br />
             </div>
         )
     }
@@ -41,4 +46,4 @@ const mapStateToProps = state => ({
     user: state.users.user
 })
 
-export default connect(mapStateToProps, {})(Transactions);
+export default connect(mapStateToProps, {logout})(Transactions);

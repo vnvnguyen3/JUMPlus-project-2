@@ -34,6 +34,7 @@ class Update extends Component {
             user.pin = this.state.pin;
             alert("PIN successfully changed")
             this.props.updateUser(user);
+            this.props.history.push('/transactions');
         }
     }
 
